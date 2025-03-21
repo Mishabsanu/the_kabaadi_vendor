@@ -44,6 +44,7 @@ export default function Profile() {
   ];
   const handleLogout = () => {
     dispatch(setLogout({ current_user: null }));
+    router.push("/auth/enter-mobile");
   };
   return (
     <div className="flex flex-col items-center min-h-screen bg-gray-50 px-4 py-6">

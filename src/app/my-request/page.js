@@ -5,17 +5,19 @@ import Head from "next/head";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import axios from "axios";
+import { useSelector } from "react-redux";
 
 export default function WeeklyRoutes() {
   const router = useRouter();
   const [vendorList, setVendorList] = useState([]);
-
+  const user = useSelector((state) => state.auth);
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://kabadiwale-backend.onrender.com/api/V1/vendor/list-request-by-vendor"
+          `https://kabadiwale-backend.onrender.com/api/V1/vendor/list-request-by-vendor?user_id=${user?.user?._id}`
         );
+
         setVendorList(response.data.result || []);
       } catch (error) {
         toast.error("Failed to fetch vendor list.");
