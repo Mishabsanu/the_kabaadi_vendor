@@ -38,7 +38,7 @@ function VerifyOTPContent() {
 
     try {
       const response = await axios.post(
-        "https://kabadiwale-backend.onrender.com/api/V1/partner/verify-otp",
+        "https://kabadiwale-backend.onrender.com/api/V1/vendor/verify-otp",
         { mobile_no: mobile, otp }
       );
       localStorage.setItem("accessToken", response?.data?.token);
@@ -66,7 +66,7 @@ function VerifyOTPContent() {
   const handleResendOTP = async () => {
     try {
       const response = await axios.post(
-        "https://kabadiwale-backend.onrender.com/api/V1/partner/send-otp",
+        "https://kabadiwale-backend.onrender.com/api/V1/vendor/send-otp",
         { mobile_no: mobile }
       );
       if (response.data) {

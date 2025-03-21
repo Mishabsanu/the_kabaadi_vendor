@@ -23,9 +23,14 @@ export default function Profile() {
     { icon: <FaGlobe />, label: "Choose language", path: "/language" },
     {
       icon: <FaHome />,
-      label: "Select Pickup Journey",
-      path: "/pickup-journey",
+      label: "My Request",
+      path: "/my-request",
     },
+    // {
+    //   icon: <FaHome />,
+    //   label: "Select Pickup Journey",
+    //   path: "/pickup-journey",
+    // },
     { icon: <FaHeadset />, label: "Help", path: "/help" },
     {
       icon: <FaSignOutAlt />,

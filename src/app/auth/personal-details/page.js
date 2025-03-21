@@ -80,7 +80,7 @@ const PersonalDetailsContent = () => {
     ) {
       try {
         const response = await axios.post(
-          "https://kabadiwale-backend.onrender.com/api/V1/partner/personal-details",
+          "https://kabadiwale-backend.onrender.com/api/V1/vendor/personal-details",
           {
             first_name,
             last_name,

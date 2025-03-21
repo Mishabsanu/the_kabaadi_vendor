@@ -5,17 +5,17 @@ const authApi = canimApi.injectEndpoints({
     // Sign Up
     signUp: builder.mutation({
       query: (body) => ({
-        url: "/user/auth/signup",
+        url: "/vendor/auth/signup",
         method: "POST",
         body,
       }),
-      invalidatesTags: ["Partner"],
+      invalidatesTags: ["Vendor"],
     }),
 
     // Sign In
     signIn: builder.mutation({
       query: (body) => ({
-        url: "/user/auth/signin",
+        url: "/vendor/auth/signin",
         method: "POST",
         body,
       }),
@@ -24,7 +24,7 @@ const authApi = canimApi.injectEndpoints({
     // Forgot Password
     forgotPassword: builder.mutation({
       query: (userInfo) => ({
-        url: "/user/forgot-password",
+        url: "/vendor/forgot-password",
         method: "PATCH",
         body: userInfo,
       }),
@@ -33,26 +33,26 @@ const authApi = canimApi.injectEndpoints({
     // Persist Login
     persistLogin: builder.query({
       query: () => ({
-        url: "/partner/get-auth-partner",
+        url: "/vendor/get-auth-vendor",
         method: "GET",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
         },
       }),
-      providesTags: ["Partner"],
+      providesTags: ["Vendor"],
     }),
 
     // Add Route Plan (Fixed)
     addRoutePlan: builder.mutation({
       query: (body) => ({
-        url: "/partner/add-route-plan",
+        url: "/vendor/add-route-plan",
         method: "POST",
         body,
         headers: {
           Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
         },
       }),
-      invalidatesTags: ["Partner"],
+      invalidatesTags: ["Vendor"],
     }),
   }),
 });
